@@ -1,10 +1,12 @@
 struct Elf {
-    pub calories : Vec<u32>
+    calories: Vec<u32>,
 }
 
 impl Elf {
     fn new() -> Elf {
-        Elf { calories : Vec::new() }
+        Elf {
+            calories: Vec::new(),
+        }
     }
 
     fn sum_calories(&self) -> u32 {
@@ -33,11 +35,15 @@ impl Elf {
 }
 
 pub fn run1(input: String) -> u32 {
-    Elf::parse(input).iter().map(|x| x.sum_calories()).max().unwrap()
+    Elf::parse(input)
+        .iter()
+        .map(|x| x.sum_calories())
+        .max()
+        .unwrap()
 }
 
 pub fn run2(input: String) -> u32 {
-    let mut sums : Vec<u32> = Elf::parse(input).iter().map(|x| x.sum_calories()).collect();
+    let mut sums: Vec<u32> = Elf::parse(input).iter().map(|x| x.sum_calories()).collect();
     sums.sort_unstable();
     sums.iter().rev().take(3).sum()
 }
