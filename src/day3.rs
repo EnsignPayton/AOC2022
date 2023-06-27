@@ -24,8 +24,7 @@ fn letter_priority(input: char) -> u32 {
     }
 }
 
-fn chunk_lines(input: String, size : usize) -> Vec<Vec<String>>
-{
+fn chunk_lines(input: String, size: usize) -> Vec<Vec<String>> {
     let mut chunks: Vec<Vec<String>> = Vec::new();
     let mut temp: Vec<String> = Vec::new();
 
@@ -66,7 +65,6 @@ pub fn run2(input: String) -> u32 {
         .map(|x| get_common_letter2(x))
         .map(|x| letter_priority(x))
         .sum()
-
 }
 
 #[cfg(test)]
