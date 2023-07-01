@@ -41,14 +41,16 @@ impl RangePair {
 }
 
 pub fn run1(input: String) -> u32 {
-    input.lines()
+    input
+        .lines()
         .map(|x| RangePair::parse(x))
         .filter(|x| x.fully_overlapped())
         .count() as u32
 }
 
 pub fn run2(input: String) -> u32 {
-    input.lines()
+    input
+        .lines()
         .map(|x| RangePair::parse(x))
         .filter(|x| x.partially_overlapped())
         .count() as u32
