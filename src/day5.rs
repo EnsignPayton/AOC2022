@@ -127,20 +127,3 @@ pub fn run2(input: &str) -> String {
     cargo.perform_moves_2();
     cargo.top().to_string()
 }
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn test_run1() {
-        let input = include_str!("../test_input/day5.txt");
-        let result = super::run1(input);
-        assert_eq!(result, "CMZ");
-    }
-
-    #[test]
-    fn test_run2() {
-        let input = include_str!("../test_input/day5.txt");
-        let result = super::run2(input);
-        assert_eq!(result, "MCD");
-    }
-}

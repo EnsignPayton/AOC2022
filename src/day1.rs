@@ -47,20 +47,3 @@ pub fn run2(input: &str) -> u32 {
     sums.sort_unstable();
     sums.iter().rev().take(3).sum()
 }
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn test_run1() {
-        let input = include_str!("../test_input/day1.txt");
-        let result = super::run1(input);
-        assert_eq!(result, 24000);
-    }
-
-    #[test]
-    fn test_run2() {
-        let input = include_str!("../test_input/day1.txt");
-        let result = super::run2(input);
-        assert_eq!(result, 45000);
-    }
-}

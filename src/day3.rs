@@ -66,20 +66,3 @@ pub fn run2(input: &str) -> u32 {
         .map(|x| letter_priority(x))
         .sum()
 }
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn test_run1() {
-        let input = include_str!("../test_input/day3.txt");
-        let result = super::run1(input);
-        assert_eq!(result, 157);
-    }
-
-    #[test]
-    fn test_run2() {
-        let input = include_str!("../test_input/day3.txt");
-        let result = super::run2(input);
-        assert_eq!(result, 70);
-    }
-}

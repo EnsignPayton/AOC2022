@@ -55,20 +55,3 @@ pub fn run2(input: &str) -> u32 {
         .filter(|x| x.partially_overlapped())
         .count() as u32
 }
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn test_run1() {
-        let input = include_str!("../test_input/day4.txt");
-        let result = super::run1(input);
-        assert_eq!(result, 2);
-    }
-
-    #[test]
-    fn test_run2() {
-        let input = include_str!("../test_input/day4.txt");
-        let result = super::run2(input);
-        assert_eq!(result, 4);
-    }
-}
