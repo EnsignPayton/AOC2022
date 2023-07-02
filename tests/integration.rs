@@ -5,6 +5,7 @@ const DAY2: &'static str = include_str!("data/day2.txt");
 const DAY3: &'static str = include_str!("data/day3.txt");
 const DAY4: &'static str = include_str!("data/day4.txt");
 const DAY5: &'static str = include_str!("data/day5.txt");
+const DAY6: &'static str = include_str!("data/day6.txt");
 
 #[test]
 fn day1_run1() {
@@ -54,4 +55,14 @@ fn day5_run1() {
 #[test]
 fn day5_run2() {
     assert_eq!(day5::run2(DAY5), "MCD");
+}
+
+#[test]
+fn day6_run1() {
+    assert_eq!(day6::run1(DAY6), "7");
+}
+
+#[test]
+fn day6_run2() {
+    assert_eq!(day6::run2(DAY6), "19");
 }

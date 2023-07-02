@@ -1,9 +1,9 @@
-pub mod day5;
+pub mod day6;
 
 fn main() {
     let input = std::fs::read_to_string("input").unwrap();
 
-    let result = day5::run2(input.as_str());
+    let result = day6::run2(input.as_str());
 
     println!("{result}");
 }
