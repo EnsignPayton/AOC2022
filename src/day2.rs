@@ -77,7 +77,7 @@ impl Round1 {
         }
     }
 
-    fn parse(input: String) -> Vec<Round1> {
+    fn parse(input: &str) -> Vec<Round1> {
         let mut result = Vec::new();
 
         for line in input.lines() {
@@ -121,7 +121,7 @@ impl Round2 {
         }
     }
 
-    fn parse(input: String) -> Vec<Round2> {
+    fn parse(input: &str) -> Vec<Round2> {
         let mut result = Vec::new();
 
         for line in input.lines() {
@@ -165,11 +165,11 @@ impl Round2 {
     }
 }
 
-pub fn run1(input: String) -> u32 {
+pub fn run1(input: &str) -> u32 {
     Round1::parse(input).iter().map(|x| x.score()).sum()
 }
 
-pub fn run2(input: String) -> u32 {
+pub fn run2(input: &str) -> u32 {
     Round2::parse(input).iter().map(|x| x.score()).sum()
 }
 
@@ -178,14 +178,14 @@ mod tests {
     #[test]
     fn test_run1() {
         let input = include_str!("../test_input/day2.txt");
-        let result = super::run1(input.to_string());
+        let result = super::run1(input);
         assert_eq!(result, 15);
     }
 
     #[test]
     fn test_run2() {
         let input = include_str!("../test_input/day2.txt");
-        let result = super::run2(input.to_string());
+        let result = super::run2(input);
         assert_eq!(result, 12);
     }
 }

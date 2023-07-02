@@ -40,7 +40,7 @@ impl RangePair {
     }
 }
 
-pub fn run1(input: String) -> u32 {
+pub fn run1(input: &str) -> u32 {
     input
         .lines()
         .map(|x| RangePair::parse(x))
@@ -48,7 +48,7 @@ pub fn run1(input: String) -> u32 {
         .count() as u32
 }
 
-pub fn run2(input: String) -> u32 {
+pub fn run2(input: &str) -> u32 {
     input
         .lines()
         .map(|x| RangePair::parse(x))
@@ -61,14 +61,14 @@ mod tests {
     #[test]
     fn test_run1() {
         let input = include_str!("../test_input/day4.txt");
-        let result = super::run1(input.to_string());
+        let result = super::run1(input);
         assert_eq!(result, 2);
     }
 
     #[test]
     fn test_run2() {
         let input = include_str!("../test_input/day4.txt");
-        let result = super::run2(input.to_string());
+        let result = super::run2(input);
         assert_eq!(result, 4);
     }
 }

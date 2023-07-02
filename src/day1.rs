@@ -13,7 +13,7 @@ impl Elf {
         (&self.calories).iter().sum()
     }
 
-    fn parse(input: String) -> Vec<Elf> {
+    fn parse(input: &str) -> Vec<Elf> {
         let mut result = Vec::new();
 
         let mut pending_elf = Elf::new();
@@ -34,7 +34,7 @@ impl Elf {
     }
 }
 
-pub fn run1(input: String) -> u32 {
+pub fn run1(input: &str) -> u32 {
     Elf::parse(input)
         .iter()
         .map(|x| x.sum_calories())
@@ -42,7 +42,7 @@ pub fn run1(input: String) -> u32 {
         .unwrap()
 }
 
-pub fn run2(input: String) -> u32 {
+pub fn run2(input: &str) -> u32 {
     let mut sums: Vec<u32> = Elf::parse(input).iter().map(|x| x.sum_calories()).collect();
     sums.sort_unstable();
     sums.iter().rev().take(3).sum()
@@ -53,14 +53,14 @@ mod tests {
     #[test]
     fn test_run1() {
         let input = include_str!("../test_input/day1.txt");
-        let result = super::run1(input.to_string());
+        let result = super::run1(input);
         assert_eq!(result, 24000);
     }
 
     #[test]
     fn test_run2() {
         let input = include_str!("../test_input/day1.txt");
-        let result = super::run2(input.to_string());
+        let result = super::run2(input);
         assert_eq!(result, 45000);
     }
 }
