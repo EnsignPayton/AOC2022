@@ -165,10 +165,10 @@ impl Round2 {
     }
 }
 
-pub fn run1(input: &str) -> u32 {
-    Round1::parse(input).iter().map(|x| x.score()).sum()
+pub fn run1(input: &str) -> String {
+    Round1::parse(input).iter().map(|x| x.score()).sum::<u32>().to_string()
 }
 
-pub fn run2(input: &str) -> u32 {
-    Round2::parse(input).iter().map(|x| x.score()).sum()
+pub fn run2(input: &str) -> String {
+    Round2::parse(input).iter().map(|x| x.score()).sum::<u32>().to_string()
 }

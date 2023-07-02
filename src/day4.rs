@@ -40,18 +40,20 @@ impl RangePair {
     }
 }
 
-pub fn run1(input: &str) -> u32 {
+pub fn run1(input: &str) -> String {
     input
         .lines()
         .map(|x| RangePair::parse(x))
         .filter(|x| x.fully_overlapped())
-        .count() as u32
+        .count()
+        .to_string()
 }
 
-pub fn run2(input: &str) -> u32 {
+pub fn run2(input: &str) -> String {
     input
         .lines()
         .map(|x| RangePair::parse(x))
         .filter(|x| x.partially_overlapped())
-        .count() as u32
+        .count()
+        .to_string()
 }

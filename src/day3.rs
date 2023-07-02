@@ -50,19 +50,21 @@ fn get_common_letter2(input: &Vec<String>) -> char {
     panic!();
 }
 
-pub fn run1(input: &str) -> u32 {
+pub fn run1(input: &str) -> String {
     input
         .lines()
         .filter(|x| x.len() > 0)
         .map(|x| get_common_letter(x))
         .map(|x| letter_priority(x))
-        .sum()
+        .sum::<u32>()
+        .to_string()
 }
 
-pub fn run2(input: &str) -> u32 {
+pub fn run2(input: &str) -> String {
     chunk_lines(input, 3)
         .iter()
         .map(|x| get_common_letter2(x))
         .map(|x| letter_priority(x))
-        .sum()
+        .sum::<u32>()
+        .to_string()
 }

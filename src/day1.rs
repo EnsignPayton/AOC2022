@@ -34,16 +34,17 @@ impl Elf {
     }
 }
 
-pub fn run1(input: &str) -> u32 {
+pub fn run1(input: &str) -> String {
     Elf::parse(input)
         .iter()
         .map(|x| x.sum_calories())
         .max()
         .unwrap()
+        .to_string()
 }
 
-pub fn run2(input: &str) -> u32 {
+pub fn run2(input: &str) -> String {
     let mut sums: Vec<u32> = Elf::parse(input).iter().map(|x| x.sum_calories()).collect();
     sums.sort_unstable();
-    sums.iter().rev().take(3).sum()
+    sums.iter().rev().take(3).sum::<u32>().to_string()
 }
